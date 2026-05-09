@@ -61,10 +61,15 @@
             color: #22c55e;
         }
 
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .nav a {
             text-decoration: none;
             color: #111827;
-            margin-left: 20px;
             font-weight: 500;
         }
 
@@ -93,8 +98,9 @@
 
         .hero h1 {
             font-size: 68px;
-            line-height: 1.1;
+            line-height: 1.05;
             margin-bottom: 20px;
+            letter-spacing: -2px;
         }
 
         .hero h1 span {
@@ -103,7 +109,7 @@
 
         .hero p {
             font-size: 18px;
-            line-height: 1.8;
+            line-height: 1.9;
             color: #374151;
             margin-bottom: 35px;
         }
@@ -159,12 +165,20 @@
         .section-title {
             text-align: center;
             font-size: 42px;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #6b7280;
+            font-size: 18px;
+            line-height: 1.7;
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
 
@@ -267,6 +281,79 @@
             text-decoration: none;
         }
 
+        /* ===== BENEFITS SECTION ===== */
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .fancy-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 24px;
+            padding: 26px;
+            transition: 0.35s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .fancy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+        }
+
+        .fancy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .icon-circle {
+            width: 64px;
+            height: 64px;
+            min-width: 64px;
+            border-radius: 18px;
+            background: #dcfce7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .fancy-card h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+            color: #111827;
+            line-height: 1.3;
+        }
+
+        .fancy-card p {
+            color: #6b7280;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media(max-width:992px) {
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
         @media(max-width:768px) {
 
             .container {
@@ -286,14 +373,12 @@
             }
 
             .nav {
-                display: flex;
                 justify-content: center;
-                gap: 18px;
                 flex-wrap: wrap;
+                gap: 18px;
             }
 
             .nav a {
-                margin-left: 0;
                 font-size: 15px;
             }
 
@@ -316,14 +401,13 @@
             }
 
             .hero h1 {
-                font-size: 52px;
+                font-size: 48px;
                 line-height: 0.95;
-                letter-spacing: -2px;
                 margin-bottom: 24px;
             }
 
             .hero p {
-                font-size: 17px;
+                font-size: 16px;
                 line-height: 1.9;
                 margin-bottom: 30px;
                 padding: 0 4px;
@@ -352,7 +436,6 @@
             .section-title {
                 font-size: 34px;
                 line-height: 1.2;
-                margin-bottom: 18px;
             }
 
             .section-subtitle {
@@ -362,36 +445,33 @@
             }
 
             .benefits-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
+                grid-template-columns: 1fr;
+                gap: 18px;
             }
 
             .fancy-card {
-                padding: 22px 16px;
-                border-radius: 20px;
+                padding: 24px 20px;
+                border-radius: 22px;
             }
 
             .icon-circle {
-                width: 56px;
-                height: 56px;
+                width: 58px;
+                height: 58px;
+                min-width: 58px;
                 font-size: 24px;
-                margin-bottom: 16px;
             }
 
             .fancy-card h3 {
-                font-size: 17px;
-                line-height: 1.3;
+                font-size: 20px;
             }
 
             .fancy-card p {
-                font-size: 13px;
-                line-height: 1.6;
+                font-size: 14px;
             }
 
             .about {
                 padding: 28px 20px;
                 font-size: 15px;
-                line-height: 1.9;
             }
 
             .form-row {
@@ -416,84 +496,14 @@
 
         @media(max-width:520px) {
 
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
             .hero h1 {
-                font-size: 44px;
+                font-size: 42px;
             }
 
             .hero p {
-                font-size: 16px;
+                font-size: 15px;
             }
 
-        }
-
-        .section-subtitle {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            color: #6b7280;
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-
-        .fancy-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 24px;
-            padding: 30px 22px;
-            text-align: center;
-            transition: 0.35s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
-        }
-
-        .fancy-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #22c55e, #16a34a);
-        }
-
-        .fancy-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .icon-circle {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: #dcfce7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-        }
-
-        .fancy-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #111827;
-        }
-
-        .fancy-card p {
-            color: #6b7280;
-            line-height: 1.7;
-            font-size: 14px;
         }
     </style>
 
@@ -581,51 +591,91 @@
             <div class="features benefits-grid">
 
                 <div class="card fancy-card">
+
                     <div class="icon-circle">📰</div>
-                    <h3>News Portal</h3>
-                    <p>Regional news, media and digital journalism platform.</p>
+
+                    <div>
+                        <h3>News Portal</h3>
+                        <p>Regional news, media and digital journalism platform.</p>
+                    </div>
+
                 </div>
 
                 <div class="card fancy-card">
+
                     <div class="icon-circle">🏢</div>
-                    <h3>Real Estate</h3>
-                    <p>Property listings, builders and investment platform.</p>
+
+                    <div>
+                        <h3>Real Estate</h3>
+                        <p>Property listings, builders and investment platform.</p>
+                    </div>
+
                 </div>
 
                 <div class="card fancy-card">
+
                     <div class="icon-circle">🎓</div>
-                    <h3>Education</h3>
-                    <p>Jobs, coaching institutes and online learning portal.</p>
+
+                    <div>
+                        <h3>Education</h3>
+                        <p>Jobs, coaching institutes and online learning portal.</p>
+                    </div>
+
                 </div>
 
                 <div class="card fancy-card">
+
                     <div class="icon-circle">🌾</div>
-                    <h3>Agriculture</h3>
-                    <p>Agri-tech, mandi rates and farming solutions website.</p>
+
+                    <div>
+                        <h3>Agriculture</h3>
+                        <p>Agri-tech, mandi rates and farming solutions website.</p>
+                    </div>
+
                 </div>
 
                 <div class="card fancy-card">
+
                     <div class="icon-circle">🛍️</div>
-                    <h3>Business Directory</h3>
-                    <p>Local shops, startups and Haryana services listing.</p>
+
+                    <div>
+                        <h3>Business Directory</h3>
+                        <p>Local shops, startups and Haryana services listing.</p>
+                    </div>
+
                 </div>
 
                 <div class="card fancy-card">
+
                     <div class="icon-circle">✈️</div>
-                    <h3>Tourism</h3>
-                    <p>Travel guide, heritage and Haryana tourism platform.</p>
+
+                    <div>
+                        <h3>Tourism</h3>
+                        <p>Travel guide, heritage and Haryana tourism platform.</p>
+                    </div>
+
                 </div>
 
                 <div class="card fancy-card">
+
                     <div class="icon-circle">🏏</div>
-                    <h3>Sports</h3>
-                    <p>Sports academy, events and athlete community portal.</p>
+
+                    <div>
+                        <h3>Sports</h3>
+                        <p>Sports academy, events and athlete community portal.</p>
+                    </div>
+
                 </div>
 
                 <div class="card fancy-card">
+
                     <div class="icon-circle">📢</div>
-                    <h3>Community</h3>
-                    <p>Regional social platform and local public engagement.</p>
+
+                    <div>
+                        <h3>Community</h3>
+                        <p>Regional social platform and local public engagement.</p>
+                    </div>
+
                 </div>
 
             </div>
