@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://www.apnaharyana.com/sitemap.xml
+Sitemap: https://www.apnaharyana.com/sitemap.xml
